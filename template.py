@@ -13,8 +13,8 @@ list_of_files = [
     "src/pipeline/prediction_pipeline.py",
     "src/utils/__init__.py",
     "src/utils/utils.py",
-    "src/logger/logging.py"
-    "src/exceptions/exception"
+    "src/logger/logging.py",
+    "src/exceptions/exception.py",
     "tests/unit/__init__.py",
     "tests/integration/__init__.py",
     "init_setup.sh",
@@ -22,9 +22,9 @@ list_of_files = [
     "requirements_dev.tx",
     "setup.py",
     "setup.cfg",
-    "pyproject.toml"
+    "pyproject.toml",
     "tox.ini",
-    "experiments/experiments.ipynb"
+    "experiments/experiments.ipynb",
 ]
 
 for filepath in list_of_files:
