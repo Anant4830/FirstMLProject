@@ -27,7 +27,7 @@ def evaluate_model(X_train, y_train, X_test, y_test, models):
             model = list(models.values())[i]
             
             #Train model
-            model.fir(X_train, y_train)
+            model.fit(X_train, y_train)
 
             #predict testing data
             y_test_pred = model.predict(X_test)
@@ -35,7 +35,7 @@ def evaluate_model(X_train, y_train, X_test, y_test, models):
             #evaluate
             test_model_score = r2_score(y_test, y_test_pred)
 
-            report[list(model.keys())[i]] = test_model_score
+            report[list(models.keys())[i]] = test_model_score
 
         return report
 
