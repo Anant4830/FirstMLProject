@@ -1,0 +1,32 @@
+[2024-11-14 14:19:07,691] 25 root - INFO - Data Ingestion Started...!
+[2024-11-14 14:19:07,742] 28 root - INFO - Reading my dataFrame
+[2024-11-14 14:19:07,984] 35 root - INFO - I have saved the raw dataset in the artifacts folder
+[2024-11-14 14:19:07,985] 37 root - INFO - Here, I have performed train test split
+[2024-11-14 14:19:07,994] 39 root - INFO - train test split completed
+[2024-11-14 14:19:08,234] 44 root - INFO - data ingestion part completed
+[2024-11-14 14:19:08,316] 77 root - INFO - Read train and test data complete
+[2024-11-14 14:19:08,326] 78 root - INFO - Train Dataframe Head:
+   Unnamed: 0  carat        cut color clarity  depth  table     x     y     z  price
+0        7363   0.39  Very Good     E     VS2   60.9   58.0  4.72  4.77  2.89    793
+1       17674   0.40      Ideal     H    VVS1   62.0   54.0  4.72  4.76  2.94   1017
+2       26242   0.33      Ideal     H    VVS1   61.4   53.0  4.50  4.55  2.78    687
+3        4234   0.31       Good     H     VS2   63.1   57.0  4.28  4.31  2.71    489
+4       21649   0.74  Very Good     E     VS2   61.8   58.0  5.79  5.82  3.59   3180
+[2024-11-14 14:19:08,332] 79 root - INFO - Test Dataframe Head:
+   Unnamed: 0  carat        cut color clarity  depth  table     x     y     z  price
+0       25395   0.70      Ideal     G    VVS2   59.9   58.0  5.78  5.80  3.47   3234
+1       14863   1.52      Ideal     I    VVS1   62.3   55.0  7.32  7.37  4.58  11033
+2        6952   0.24      Ideal     F      IF   61.6   57.0  3.97  4.00  2.45    678
+3       12502   0.96  Very Good     H     SI1   63.1   58.0  6.20  6.25  3.93   4064
+4       21172   0.81      Ideal     H    VVS2   62.0   57.0  5.93  5.97  3.69   3497
+[2024-11-14 14:19:08,332] 31 root - INFO - Data Transformation Initiated...!
+[2024-11-14 14:19:08,332] 41 root - INFO - Pipeline initiated
+[2024-11-14 14:19:08,460] 95 root - INFO - Applying preprocessing object on training and testing datasets.
+[2024-11-14 14:19:08,464] 105 root - INFO - Preprocessing pickle file saved
+[2024-11-14 14:19:08,467] 29 root - INFO - Splitting Dependent and Independent Variable
+[2024-11-14 14:19:08,839] 47 root - INFO - Model Report : {'LinearRegression': 0.9089607320597526, 'Lasso': 0.9089522197093691, 'Ridge': 0.9089606043482946, 'ElasticNet': 0.8407390507744501}
+[2024-11-14 14:19:08,842] 60 root - INFO - Best Model Found, Model Name : LinearRegression()
+[2024-11-14 14:19:08,844] 19 root - INFO - Evaluation started...!!
+[2024-11-14 14:19:08,860] 37 root - INFO - madel has been registered-----
+[2024-11-14 14:19:09,370] 25 root - INFO - all evaluation metrices are captured....!!
+[2024-11-14 14:19:18,452] 58 root - INFO - Evaluation complete...!!

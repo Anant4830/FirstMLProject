@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Admin/Downloads/AI-839/MLOps/projects2/FirstMLProject/mlruns/0/a8bdb12110844cb49cbd8eec69f14c59/artifacts
+end_time: 1731570683371
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a8bdb12110844cb49cbd8eec69f14c59
+run_name: stylish-lynx-399
+run_uuid: a8bdb12110844cb49cbd8eec69f14c59
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731570674117
+status: 4
+tags: []
+user_id: Admin

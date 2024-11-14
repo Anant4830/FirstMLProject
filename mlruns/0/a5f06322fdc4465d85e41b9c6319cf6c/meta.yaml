@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Admin/Downloads/AI-839/MLOps/projects2/FirstMLProject/mlruns/0/a5f06322fdc4465d85e41b9c6319cf6c/artifacts
+end_time: 1731574158447
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a5f06322fdc4465d85e41b9c6319cf6c
+run_name: monumental-panda-567
+run_uuid: a5f06322fdc4465d85e41b9c6319cf6c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731574149260
+status: 4
+tags: []
+user_id: Admin

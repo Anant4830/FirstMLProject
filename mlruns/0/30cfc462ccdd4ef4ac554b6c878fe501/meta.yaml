@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Admin/Downloads/AI-839/MLOps/projects2/FirstMLProject/mlruns/0/30cfc462ccdd4ef4ac554b6c878fe501/artifacts
+end_time: 1731573851893
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 30cfc462ccdd4ef4ac554b6c878fe501
+run_name: merciful-auk-12
+run_uuid: 30cfc462ccdd4ef4ac554b6c878fe501
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731573841960
+status: 4
+tags: []
+user_id: Admin

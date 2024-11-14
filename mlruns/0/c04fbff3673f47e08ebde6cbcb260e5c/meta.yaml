@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Admin/Downloads/AI-839/MLOps/projects2/FirstMLProject/mlruns/0/c04fbff3673f47e08ebde6cbcb260e5c/artifacts
+end_time: 1731570220211
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c04fbff3673f47e08ebde6cbcb260e5c
+run_name: loud-wolf-519
+run_uuid: c04fbff3673f47e08ebde6cbcb260e5c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731570208994
+status: 4
+tags: []
+user_id: Admin
