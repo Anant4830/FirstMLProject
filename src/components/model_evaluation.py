@@ -44,16 +44,21 @@ class ModelEvaluation:
             with mlflow.start_run():
                 prediction = model.predict(X_test)
                 (rmse, mae, r2) = self.eval_metrics(y_test, prediction)
-
+               
+          
                 mlflow.log_metric("rmse", rmse)
                 mlflow.log_metric("mae", mae)
                 mlflow.log_metric("r2", r2)
+                print("After log:")
 
-                if tracking_uri_type_store != "file":
-                    mlflow.sklearn.log_model(model, "model", registered_model_name="ml_model")
-                else:
-                    mlflow.sklearn.log_model(model, "model")
-
+                # if tracking_uri_type_store != "file":
+                #     print("in if block")
+                #     mlflow.sklearn.log_model(model, "model", registered_model_name="ml_model")
+                # else:
+                #     print("in else block")
+                #     mlflow.sklearn.log_model(model, "model")
+                # print("Last else")
+        
         except Exception as e:
             logging.info("Evaluation complete...!!")
             raise customException(e, sys)

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Admin/Downloads/AI-839/MLOps/projects2/FirstMLProject/mlruns/0/101eac08ff2a4d15b207c1e5c4bcdf55/artifacts
+end_time: 1732600748068
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 101eac08ff2a4d15b207c1e5c4bcdf55
+run_name: hilarious-asp-216
+run_uuid: 101eac08ff2a4d15b207c1e5c4bcdf55
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732600736627
+status: 4
+tags: []
+user_id: Admin

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Admin/Downloads/AI-839/MLOps/projects2/FirstMLProject/mlruns/0/f65c901cb931491fb8c68986c06a7aab/artifacts
+end_time: 1732600851060
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f65c901cb931491fb8c68986c06a7aab
+run_name: upset-sloth-855
+run_uuid: f65c901cb931491fb8c68986c06a7aab
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732600840242
+status: 4
+tags: []
+user_id: Admin

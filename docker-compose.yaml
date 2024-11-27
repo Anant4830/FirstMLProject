@@ -1,0 +1,30 @@
+version: "3"
+services:
+  airflow:
+    build: 
+      context: ./
+      dockerfile: Dockerfile.airflow
+    image: airflowimage
+    environment:
+      - DATA_PATH="/app/data/cubic_zirconia.csv"
+    container_name:  gemstone-prediction-airflow
+    ports:
+     - "8080:8080"
+    volumes:
+     - ./local_data:/data # Mounts the local "local_data" directory to "/data" in the container
+  # application:
+  #   build: .
+  #   image: gemstone-prediction
+  #   container_name: gemstone-prediction
+  #   ports:
+  #    - "8080:8080"
+  flaskapp:
+    build: 
+      context: ./
+      dockerfile: Dockerfile.flask
+    image: flaskimage
+    container_name: gemstone-prediction-flask
+    ports:
+      - "80:80"
+    volumes:
+      - ./local_data:/data # Mounts the local "local_data" directory to "/data" in the container

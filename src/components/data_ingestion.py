@@ -24,7 +24,13 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Data Ingestion Started...!")
         try:
-            data = pd.read_csv(r"C:\Users\Admin\Downloads\AI-839\MLOps\projects2\FirstMLProject\data\cubic_zirconia.csv")
+            # data = pd.read_csv(r"C:\Users\Admin\Downloads\AI-839\MLOps\projects2\FirstMLProject\data\cubic_zirconia.csv")
+            #path_csv = os.path.abspath(os.path.join("..","..","data","cubic_zirconia.csv"))
+            # BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+            # file_path = os.path.join(BASE_DIR, "data", "cubic_zirconia.csv")
+            # # data = pd.read_csv(path_csv)
+            data = pd.read_csv(r"/app/data/cubic_zirconia.csv")
+            #data = pd.read_csv(file_path)
             logging.info("Reading my dataFrame")
 
             os.makedirs(os.path.dirname(os.path.join(self.ingestion_config.raw_data_path)))
