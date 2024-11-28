@@ -25,6 +25,6 @@ services:
     image: flaskimage
     container_name: gemstone-prediction-flask
     ports:
-      - "80:80"
+      - "8000:8000"
     volumes:
       - ./local_data:/data # Mounts the local "local_data" directory to "/data" in the container
