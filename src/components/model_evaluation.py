@@ -34,7 +34,7 @@ class ModelEvaluation:
 
             #mlflow.set_registry_uri("")
 
-            logging.info("madel has been registered-----")
+            logging.info("Model has been registered-----")
 
             tracking_uri_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 

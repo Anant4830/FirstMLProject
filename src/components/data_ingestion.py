@@ -16,6 +16,8 @@ class DataIngestionConfig:
     raw_data_path:str=os.path.join("artifacts", "raw.csv")
     train_data_path:str=os.path.join("artifacts", "train.csv")
     test_data_path:str=os.path.join("artifacts", "test.csv")
+    base = "/app"
+    # base = "C:/Projects/MLOps/FirstMLProject"
 
 class DataIngestion:
     def __init__(self):
@@ -23,11 +25,11 @@ class DataIngestion:
 
     def initiate_data_ingestion(self):
         logging.info("Data Ingestion Started")
-        try:
-            data = pd.read_csv(r"/app/data/cubic_zirconia.csv")
+        try:            
+            data = pd.read_csv(self.ingestion_config.base + "/data/cubic_zirconia.csv")
             logging.info("Read Data")
 
-            artifacts_dir = "/app/artifacts"
+            artifacts_dir = self.ingestion_config.base + "/artifacts"
 
             if os.path.exists(artifacts_dir) and os.path.isdir(artifacts_dir):
                 for item in os.listdir(artifacts_dir):

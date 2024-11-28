@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, jsonify
-
+from src.utils.utils import load_object
 from src.pipeline.prediction_pipeline import PredictPipeline, CustomData
+
+import os
 
 app = Flask(__name__)
 
@@ -34,8 +36,11 @@ def predict_datapoint():
 
 @app.route('/reports', methods=["GET"])
 def get_reports():
-    if request.method =="GET":
-        return render_template("reports.html")
+    report_path:str=os.path.join("artifacts", "report.pkl")
+    print(report_path)
+    data = load_object(report_path)
+    print(data)
+    return render_template("reports.html", data = data)
 
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=8000)

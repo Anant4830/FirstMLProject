@@ -67,42 +67,42 @@
             <table>
                 <tr>
                     <td>MSE</td>
-                    <td>Row 1, Column 2</td>
+                    <td>{{data["mse"]}}</td>
                 </tr>
                 <tr>
                     <td>MSE With Noise</td>
-                    <td>Row 2, Column 2</td>
+                    <td>{{data["mse_noisy"]}}</td>
                 </tr>
                 <tr>
                     <td>MSE With Missing Data</td>
-                    <td>Row 3, Column 2</td>
+                    <td>{{data["mse_missing"]}}</td>
                 </tr>
             </table>
         <h1>Inference Level</h1>
         <table>
             <tr>
                 <td>Prediction</td>
-                <td>Row 1, Column 2</td>
+                <td>{{data["prediction"]}}</td>
             </tr>
             <tr>
                 <td>SHAP Explanation</td>
-                <td>Row 2, Column 2</td>
+                <td>{{data["explanation"]}}</td>
             </tr>
             <tr>
                 <td>Conformal Bounds</td>
-                <td>Row 3, Column 2</td>
+                <td>{{data["conformal_bounds"]}}</td>
             </tr>
             <tr>
                 <td>Mahalanobis Confidence</td>
-                <td>Row 4, Column 2</td>
+                <td>{{data["mahalanobis_confidence"]}}</td>
             </tr>
             <tr>
                 <td>PyOD Confidence</td>
-                <td>Row 5, Column 2</td>
+                <td>{{data["pyod_confidence"]}}</td>
             </tr>
             <tr>
                 <td>Combined Confidence</td>
-                <td>Row 6, Column 2</td>
+                <td>{{data["combined_confidence"]}}</td>
             </tr>
         </table>
     </div>
