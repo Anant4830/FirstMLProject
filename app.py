@@ -32,6 +32,10 @@ def predict_datapoint():
 
         return render_template("result.html", final_result = result)
 
+@app.route('/reports', methods=["GET"])
+def get_reports():
+    if request.method =="GET":
+        return render_template("reports.html")
 
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=8000)

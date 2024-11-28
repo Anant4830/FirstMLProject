@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Columns Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh; /* Ensures layout fits the screen height */
+        }
+        .column {
+            flex: 1; /* Each column takes equal space */
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto; /* Adds a scrollbar if content overflows */
+        }
+        .left {
+            background-color: #f9f9f9;
+        }
+        .right {
+            background-color: #e9f7e9;
+        }
+        h1 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        img {
+            display: block;
+            max-width: 100%; /* Ensures images scale within the column */
+            height: auto;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="column left">
+        <h1>Aggregate Level</h1>
+        <div>
+            <h2>Explainability</h2>
+            <img src="{{ url_for('static', filename='1_shap_summary_plot.png') }}" alt="SHAP Summary Plot">
+            <img src="{{ url_for('static', filename='2_shap_force_plot.png') }}" alt="SHAP Force Plot">
+            <h2>Calibration</h2>
+            <img src="{{ url_for('static', filename='3_calibration.png') }}" alt="Calibration Plot">
+            
+        </div>
+    </div>
+    <div class="column right">
+        <h2>Robustness</h2>
+            <table>
+                <tr>
+                    <td>MSE</td>
+                    <td>Row 1, Column 2</td>
+                </tr>
+                <tr>
+                    <td>MSE With Noise</td>
+                    <td>Row 2, Column 2</td>
+                </tr>
+                <tr>
+                    <td>MSE With Missing Data</td>
+                    <td>Row 3, Column 2</td>
+                </tr>
+            </table>
+        <h1>Inference Level</h1>
+        <table>
+            <tr>
+                <td>Prediction</td>
+                <td>Row 1, Column 2</td>
+            </tr>
+            <tr>
+                <td>SHAP Explanation</td>
+                <td>Row 2, Column 2</td>
+            </tr>
+            <tr>
+                <td>Conformal Bounds</td>
+                <td>Row 3, Column 2</td>
+            </tr>
+            <tr>
+                <td>Mahalanobis Confidence</td>
+                <td>Row 4, Column 2</td>
+            </tr>
+            <tr>
+                <td>PyOD Confidence</td>
+                <td>Row 5, Column 2</td>
+            </tr>
+            <tr>
+                <td>Combined Confidence</td>
+                <td>Row 6, Column 2</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
