@@ -11,7 +11,8 @@ services:
     ports:
      - "8080:8080"
     volumes:
-     - ./local_data:/data # Mounts the local "local_data" directory to "/data" in the container
+     - ./static:/app/static
+     - ./local_data:/app/artifacts # Mounts the local "local_data" directory to "/data" in the container
   # application:
   #   build: .
   #   image: gemstone-prediction
@@ -27,4 +28,5 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./local_data:/data # Mounts the local "local_data" directory to "/data" in the container
+      - ./static:/app/static
+      - ./local_data:/app/artifacts # Mounts the local "local_data" directory to "/data" in the container

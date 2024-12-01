@@ -2,3 +2,5 @@ logs
 template.py
 test.py
 READ.md
+artifacts
+mlruns

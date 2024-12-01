@@ -3,14 +3,16 @@ USER root
 RUN mkdir /app
 COPY . /app/
 WORKDIR /app/
-RUN pip3 install -r requirements.txt
-#RUN pip install -r requirements.txt
+RUN pip3 install --default-timeout=100 -r requirements.txt
+# RUN pip install -r requirements.txt
 ENV AIRFLOW_HOME="/app/airflow"
-ENV AIRFLOW_CORE_DAGBAG_IMPORT_TIMEOUT=1000
+ENV AIRFLOW_CORE_DAGBAG_IMPORT_TIMEOUT=2000
+ENV AIRFLOW__CORE__DAG_FILE_PROCESSOR_TIMEOUT=2000
+ENV AIRFLOW__CORE__DAGBAG_IMPORT_TIMEOUT=2000
 ENV AIRFLOW_CORE_ENABLE_XCOM_PICKLING=TRUE
 ENV PYTHONPATH="/app"
 RUN airflow db init
-#RUN airflow db migrate && airflow connections create-default-connections
+# RUN airflow db migrate && airflow connections create-default-connections
 RUN airflow users create -e anant4830@gmail.com -f anant -l mohan -p admin -r Admin -u admin
 RUN chmod 777 start.sh
 RUN apt update -y

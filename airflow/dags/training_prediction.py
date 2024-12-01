@@ -6,7 +6,9 @@ import pendulum
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 import sys
-#sys.path.append('C:/Users/Admin/Downloads/AI-839/MLOps/projects2/FirstMLProject')
+import sys
+# sys.path.append('C:/Projects/MLOps/FirstMLProject')
+# sys.path.append('C:/Users/Admin/Downloads/AI-839/MLOps/projects2/FirstMLProject')
 from src.pipeline.training_pipeline import TrainingPipeline
 
 
@@ -48,22 +50,14 @@ with DAG(
         train_arr = np.array(data_transformation_artifact['train_arr'])
         test_arr = np.array(data_transformation_artifact['test_arr'])
         training_pipeline.start_model_training(train_arr, test_arr)
-    
-    #need to configure azure blob or use minIO
-    #change the function name to push_data_to_azureblob
-    def push_data_to_s3(**kwargs):
-        import os
-        bucket_name = os.getenv("BUCKET_NAME")
-        artifact_folder = "/app/artifacts"
-        os.system(f"aws s3 sync {artifact_folder} s3:/{bucket_name}")
-    
-    # #use below function for azure blob
-    # def push_data_to_azureblob(**kwargs):
-    #     import os
-    #     bucket_name = "repository_name" #any custom name for repository_name
-    #     artifact_folder = "/app/artifacts"
-    #     #write below code to save it to azure blob and accordingly ention
-    #     #os.system(f"aws s3 sync {artifact_folder} s3:/{bucket_name}")
+
+    def data_report_generator(**kwargs):
+        import numpy as np
+        ti = kwargs["ti"]
+        data_transformation_artifact = ti.xcom_pull(task_ids="data_transformation", key="data_transformation_artifact")
+        train_arr = np.array(data_transformation_artifact['train_arr'])
+        test_arr = np.array(data_transformation_artifact['test_arr'])
+        training_pipeline.start_reporting(train_arr, test_arr)
 
     data_ingestion_task = PythonOperator(
         task_id="data_ingestion",
@@ -92,15 +86,20 @@ with DAG(
     )
     model_trainer_task.doc_md = dedent(
         """\
-    ### Transformation task
+    ### Training Task
     this task performs the model training.
     """
     )
 
-    # push_data_to_s3 = PythonOperator(
-    #     task_id = "push_data_to_s3",
-    #     python_collable = push_data_to_s3
-    # )
+    data_report_generator_task = PythonOperator(
+        task_id="data_report_generator",
+        python_callable=data_report_generator,
+    )
+    data_report_generator_task.doc_md = dedent(
+        """\
+    ### Reporting Task
+    Explainability, calibration, robustness etc.
+    """
+    )
     
-    #data_ingestion_task >> data_transform_task >> model_trainer_task >> push_data_to_s3
-    data_ingestion_task >> data_transform_task >> model_trainer_task
+    data_ingestion_task >> data_transform_task >> model_trainer_task >> data_report_generator_task

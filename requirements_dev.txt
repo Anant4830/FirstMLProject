@@ -2,12 +2,16 @@ pandas
 scikit-learn
 numpy
 seaborn
+matplotlib
 flask
 mlflow==2.2.2
 dvc
 ipykernel
 xgboost
 apache-airflow
+mapie
+shap
+pyod
 
 #setuptools==58.0.4 has disutils
 #pip install setuptools==58.0.4
